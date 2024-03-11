@@ -3,6 +3,7 @@
 import { createInvoice } from '@/app/lib/actions';
 import { CustomerField } from '@/app/lib/definitions';
 import { Button } from '@/app/ui/button';
+import NonFieldError from '@/app/ui/errors/non-field-error';
 import CustomerName from '@/app/ui/invoices/create-form/customer-name';
 import InvoiceAmount from '@/app/ui/invoices/create-form/invoice-amount';
 import InvoiceStatusField from '@/app/ui/invoices/create-form/invoice-status';
@@ -20,6 +21,8 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
         <InvoiceAmount errors={state.errors} />
 
         <InvoiceStatusField errors={state.errors} />
+
+        <NonFieldError message={state.message} />
       </div>
       <div className="mt-6 flex justify-end gap-4">
         <Link
