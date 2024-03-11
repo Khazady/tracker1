@@ -1,7 +1,7 @@
 'use client';
 
 import { State } from '@/app/lib/actions';
-import FieldError from '@/app/ui/field-error';
+import FieldError from '@/app/ui/errors/field-error';
 import { CheckIcon, ClockIcon } from '@heroicons/react/24/outline';
 
 export default function InvoiceStatusField({
@@ -18,6 +18,7 @@ export default function InvoiceStatusField({
         <div className="flex gap-4">
           <div className="flex items-center">
             <input
+              required
               id="pending"
               name="status"
               type="radio"
@@ -34,6 +35,7 @@ export default function InvoiceStatusField({
           </div>
           <div className="flex items-center">
             <input
+              required
               id="paid"
               name="status"
               type="radio"

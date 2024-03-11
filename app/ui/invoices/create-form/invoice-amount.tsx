@@ -1,7 +1,7 @@
 'use client';
 
 import { State } from '@/app/lib/actions';
-import FieldError from '@/app/ui/field-error';
+import FieldError from '@/app/ui/errors/field-error';
 import { CurrencyDollarIcon } from '@heroicons/react/24/outline';
 
 export default function InvoiceAmount({ errors }: { errors: State['errors'] }) {
@@ -13,6 +13,7 @@ export default function InvoiceAmount({ errors }: { errors: State['errors'] }) {
       <div className="relative mt-2 rounded-md">
         <div className="relative">
           <input
+            required
             id="amount"
             name="amount"
             type="number"
