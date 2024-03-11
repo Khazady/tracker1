@@ -1,6 +1,6 @@
 'use client';
 
-import { createInvoice, updateInvoice } from '@/app/lib/actions';
+import { updateInvoice } from '@/app/lib/actions';
 import { CustomerField, InvoiceForm } from '@/app/lib/definitions';
 import NonFieldError from '@/app/ui/errors/non-field-error';
 import FormButtons from '@/app/ui/form-buttons';
@@ -17,11 +17,11 @@ export default function EditInvoiceForm({
   customers: CustomerField[];
 }) {
   const initialState = { message: null, errors: {} };
-  const [state, dispatch] = useFormState(createInvoice, initialState);
-
   const updateInvoiceWithId = updateInvoice.bind(null, invoice.id);
+  const [state, dispatch] = useFormState(updateInvoiceWithId, initialState);
+
   return (
-    <form action={updateInvoiceWithId}>
+    <form action={dispatch}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
         <CustomerName
           customers={customers}
