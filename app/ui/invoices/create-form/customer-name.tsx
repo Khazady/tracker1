@@ -2,6 +2,7 @@
 
 import { State } from '@/app/lib/actions';
 import { CustomerField } from '@/app/lib/definitions';
+import FieldError from '@/app/ui/field-error';
 import { UserCircleIcon } from '@heroicons/react/24/outline';
 
 export default function CustomerName(props: {
@@ -20,6 +21,7 @@ export default function CustomerName(props: {
           name="customerId"
           className="peer block w-full cursor-pointer rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
           defaultValue=""
+          aria-describedby="customer-error"
         >
           <option value="" disabled>
             Select a customer
@@ -31,6 +33,7 @@ export default function CustomerName(props: {
           ))}
         </select>
         <UserCircleIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
+        <FieldError id="customer-error" errors={errors?.customerId} />
       </div>
     </div>
   );

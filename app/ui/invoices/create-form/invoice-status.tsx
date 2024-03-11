@@ -1,6 +1,7 @@
 'use client';
 
 import { State } from '@/app/lib/actions';
+import FieldError from '@/app/ui/field-error';
 import { CheckIcon, ClockIcon } from '@heroicons/react/24/outline';
 
 export default function InvoiceStatusField({
@@ -22,6 +23,7 @@ export default function InvoiceStatusField({
               type="radio"
               value="pending"
               className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
+              aria-describedby="status-error"
             />
             <label
               htmlFor="pending"
@@ -37,6 +39,7 @@ export default function InvoiceStatusField({
               type="radio"
               value="paid"
               className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
+              aria-describedby="status-error"
             />
             <label
               htmlFor="paid"
@@ -47,6 +50,7 @@ export default function InvoiceStatusField({
           </div>
         </div>
       </div>
+      <FieldError id="status-error" errors={errors?.status} />
     </fieldset>
   );
 }
