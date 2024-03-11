@@ -4,7 +4,11 @@ import { State } from '@/app/lib/actions';
 import FieldError from '@/app/ui/errors/field-error';
 import { CurrencyDollarIcon } from '@heroicons/react/24/outline';
 
-export default function InvoiceAmount({ errors }: { errors: State['errors'] }) {
+export default function InvoiceAmount(props: {
+  errors: State['errors'];
+  defaultValue?: number;
+}) {
+  const { errors, defaultValue = '' } = props;
   return (
     <div className="mb-4">
       <label htmlFor="amount" className="mb-2 block text-sm font-medium">
@@ -13,6 +17,7 @@ export default function InvoiceAmount({ errors }: { errors: State['errors'] }) {
       <div className="relative mt-2 rounded-md">
         <div className="relative">
           <input
+            defaultValue={defaultValue}
             required
             id="amount"
             name="amount"

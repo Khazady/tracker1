@@ -1,14 +1,15 @@
 'use client';
 
 import { State } from '@/app/lib/actions';
+import { InvoiceForm } from '@/app/lib/definitions';
 import FieldError from '@/app/ui/errors/field-error';
 import { CheckIcon, ClockIcon } from '@heroicons/react/24/outline';
 
-export default function InvoiceStatusField({
-  errors,
-}: {
+export default function InvoiceStatusField(props: {
   errors: State['errors'];
+  defaultValue?: InvoiceForm['status'];
 }) {
+  const { errors } = props;
   return (
     <fieldset>
       <legend className="mb-2 block text-sm font-medium">
