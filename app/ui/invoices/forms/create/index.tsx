@@ -4,9 +4,9 @@ import { createInvoice } from '@/app/lib/actions';
 import { CustomerField } from '@/app/lib/definitions';
 import NonFieldError from '@/app/ui/errors/non-field-error';
 import FormButtons from '@/app/ui/form-buttons';
-import CustomerName from '@/app/ui/invoices/create-form/customer-name';
-import InvoiceAmount from '@/app/ui/invoices/create-form/invoice-amount';
-import InvoiceStatusField from '@/app/ui/invoices/create-form/invoice-status';
+import CustomerName from '@/app/ui/invoices/forms/customer-name';
+import InvoiceAmount from '@/app/ui/invoices/forms/invoice-amount';
+import InvoiceStatusField from '@/app/ui/invoices/forms/invoice-status';
 import { useFormState } from 'react-dom';
 
 export default function Form({ customers }: { customers: CustomerField[] }) {
