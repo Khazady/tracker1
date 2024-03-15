@@ -8,7 +8,7 @@
     "start": "next start",
     "seed": "node -r dotenv/config ./scripts/seed.js",
     "lint": "next lint",
-    "postinstall": "prisma generate"
+    "postinstall": "npx prisma generate"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^1.5.0",
